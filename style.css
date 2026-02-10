@@ -9,8 +9,8 @@
     --bg-alt: #111;
     --text: #e8e8e8;
     --text-muted: #888;
-    --accent: #4fc3f7;
-    --accent-dim: rgba(79, 195, 247, 0.12);
+    --accent: #66bb6a;
+    --accent-dim: rgba(102, 187, 106, 0.12);
     --border: #222;
     --card: #161616;
     --card-hover: #1a1a1a;
@@ -298,7 +298,7 @@ nav {
     border-radius: 100px;
     font-size: 0.8rem;
     font-weight: 500;
-    border: 1px solid rgba(79, 195, 247, 0.2);
+    border: 1px solid rgba(102, 187, 106, 0.2);
 }
 
 /* ─── Timeline ─── */
@@ -650,7 +650,7 @@ nav {
     text-decoration: none;
     font-weight: 500;
     padding: 0.6rem 1.25rem;
-    border: 1px solid rgba(79, 195, 247, 0.3);
+    border: 1px solid rgba(102, 187, 106, 0.3);
     border-radius: 6px;
     font-size: 0.9rem;
     transition: background 0.2s, border-color 0.2s;
