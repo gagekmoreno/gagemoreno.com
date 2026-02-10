@@ -443,6 +443,16 @@ nav {
     margin-bottom: 0.5rem;
 }
 
+.pub h3 a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.pub h3 a:hover {
+    color: var(--accent);
+}
+
 .pub-authors {
     font-size: 0.85rem;
     color: var(--text-muted);
