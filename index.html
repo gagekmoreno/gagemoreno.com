@@ -344,6 +344,8 @@
         </div>
     </section>
 
+    <button class="virus-toggle" aria-label="Toggle virus mode">Virus Mode</button>
+
     <footer>
         <p>&copy; 2026 Gage K. Moreno</p>
     </footer>
@@ -381,6 +383,20 @@
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.section').forEach(s => observer.observe(s));
+
+        // Virus mode
+        const virusBtn = document.querySelector('.virus-toggle');
+        const virusSvg = `<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 32 32'><circle cx='16' cy='16' r='8' fill='%2366bb6a'/><circle cx='16' cy='16' r='5' fill='%232e7d32'/><line x1='16' y1='2' x2='16' y2='8' stroke='%2366bb6a' stroke-width='2' stroke-linecap='round'/><line x1='16' y1='24' x2='16' y2='30' stroke='%2366bb6a' stroke-width='2' stroke-linecap='round'/><line x1='2' y1='16' x2='8' y2='16' stroke='%2366bb6a' stroke-width='2' stroke-linecap='round'/><line x1='24' y1='16' x2='30' y2='16' stroke='%2366bb6a' stroke-width='2' stroke-linecap='round'/><line x1='6' y1='6' x2='10.3' y2='10.3' stroke='%2366bb6a' stroke-width='2' stroke-linecap='round'/><line x1='21.7' y1='21.7' x2='26' y2='26' stroke='%2366bb6a' stroke-width='2' stroke-linecap='round'/><line x1='6' y1='26' x2='10.3' y2='21.7' stroke='%2366bb6a' stroke-width='2' stroke-linecap='round'/><line x1='21.7' y1='10.3' x2='26' y2='6' stroke='%2366bb6a' stroke-width='2' stroke-linecap='round'/><circle cx='16' cy='3' r='2' fill='%2366bb6a'/><circle cx='16' cy='29' r='2' fill='%2366bb6a'/><circle cx='3' cy='16' r='2' fill='%2366bb6a'/><circle cx='29' cy='16' r='2' fill='%2366bb6a'/><circle cx='6.8' cy='6.8' r='2' fill='%2366bb6a'/><circle cx='25.2' cy='25.2' r='2' fill='%2366bb6a'/><circle cx='6.8' cy='25.2' r='2' fill='%2366bb6a'/><circle cx='25.2' cy='6.8' r='2' fill='%2366bb6a'/></svg>`;
+        const virusCursor = `url("data:image/svg+xml,${virusSvg}") 10 10, auto`;
+        let virusActive = false;
+        virusBtn.addEventListener('click', () => {
+            virusActive = !virusActive;
+            document.body.style.cursor = virusActive ? virusCursor : '';
+            document.querySelectorAll('a, button').forEach(el => {
+                el.style.cursor = virusActive ? virusCursor : '';
+            });
+            virusBtn.classList.toggle('active', virusActive);
+        });
     </script>
 </body>
 </html>

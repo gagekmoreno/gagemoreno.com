@@ -747,6 +747,36 @@ html:not(.light) .icon-moon { display: none; }
     border-color: var(--accent);
 }
 
+/* ─── Virus Mode ─── */
+.virus-toggle {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background: var(--card);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 100;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.virus-toggle:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.virus-toggle.active {
+    background: var(--accent-dim);
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
 /* ─── Footer ─── */
 footer {
     text-align: center;
