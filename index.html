@@ -17,6 +17,10 @@
             <a href="#press">Press</a>
             <a href="#contact">Contact</a>
         </div>
+        <button class="theme-toggle" aria-label="Toggle theme">
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
         <button class="nav-toggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
@@ -134,7 +138,7 @@
 
         <div class="pub-list">
             <div class="pub">
-                <span class="pub-venue">In Review at Cell</span>
+                <span class="pub-venue">Preprint</span>
                 <h3>Geospatial and demographic patterns of SARS-CoV-2 spread in Massachusetts from over 130,000 genomes</h3>
                 <p class="pub-authors"><strong>Moreno GK</strong>*&dagger;, Brock-Fisher T*, Krasilnikova LA*, Schaffner SF*, Burns M, Casiello CE, &hellip; Wohl S, Park DJ, Madoff LC, Brown CM, MacInnis BL&dagger;, Sabeti PC.</p>
                 <p class="pub-journal">medRxiv, 2025</p>
@@ -150,7 +154,7 @@
             </div>
 
             <div class="pub">
-                <span class="pub-venue">Cell (Cover)</span>
+                <span class="pub-venue">Cell</span>
                 <h3>Transmission from vaccinated individuals in a large SARS-CoV-2 Delta variant outbreak</h3>
                 <p class="pub-authors">Siddle KJ*, Krasilnikova LA*, <strong>Moreno GK</strong>*, Schaffner SF*, Vostok J, &hellip; Park DJ, MacInnis BL, Sabeti PC.</p>
                 <p class="pub-journal">Cell, 2022</p>
@@ -191,11 +195,19 @@
             </div>
 
             <div class="pub">
-                <span class="pub-venue">Nature Medicine</span>
-                <h3>Multiplexed CRISPR-based microfluidic platform for clinical testing of respiratory viruses</h3>
-                <p class="pub-authors">Welch NL, Zhu M, &hellip; <strong>Moreno GK</strong>, &hellip; Sabeti PC, Myhrvold C.</p>
-                <p class="pub-journal">Nature Medicine, 2022</p>
-                <a href="https://doi.org/10.1038/s41591-022-01734-1" class="pub-link">Full Text &rarr;</a>
+                <span class="pub-venue">Clinical Infectious Diseases</span>
+                <h3>Viral sequencing reveals healthcare personnel rarely become infected with SARS-CoV-2 through patient contact</h3>
+                <p class="pub-authors">Braun KM*, <strong>Moreno GK</strong>*, Accola MA*, &hellip; Friedrich TC, O'Connor DH.</p>
+                <p class="pub-journal">Clinical Infectious Diseases, 2021</p>
+                <a href="https://doi.org/10.1093/cid/ciab281" class="pub-link">Full Text &rarr;</a>
+            </div>
+
+            <div class="pub">
+                <span class="pub-venue">PLoS Pathogens</span>
+                <h3>Transmission of SARS-CoV-2 in domestic cats imposes a narrow bottleneck</h3>
+                <p class="pub-authors">Braun KM*, <strong>Moreno GK</strong>*, Halfmann PJ*, &hellip; O'Connor DH, Friedrich TC.</p>
+                <p class="pub-journal">PLoS Pathogens, 2021</p>
+                <a href="https://doi.org/10.1371/journal.ppat.1009373" class="pub-link">Full Text &rarr;</a>
             </div>
 
             <div class="pub">
@@ -204,6 +216,14 @@
                 <p class="pub-authors"><strong>Moreno GK</strong>*, Newman CM*, &hellip; Friedrich TC, O'Connor DH.</p>
                 <p class="pub-journal">Journal of Virology, 2020</p>
                 <a href="https://doi.org/10.1128/JVI.01881-19" class="pub-link">Full Text &rarr;</a>
+            </div>
+
+            <div class="pub">
+                <span class="pub-venue">Preprint</span>
+                <h3>Limited SARS-CoV-2 diversity within hosts and following passage in cell culture</h3>
+                <p class="pub-authors"><strong>Moreno GK</strong>*, Braun KM*, Halfmann PJ*, Prall TM*, &hellip; Friedrich TC, O'Connor DH.</p>
+                <p class="pub-journal">bioRxiv, 2020</p>
+                <a href="https://doi.org/10.1101/2020.04.20.051011" class="pub-link">Full Text &rarr;</a>
             </div>
         </div>
         <p class="pub-footer">Full list of 22 publications available on <a href="https://scholar.google.com/citations?hl=en&amp;user=ttigeMwAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Google Scholar</a></p>
@@ -340,6 +360,15 @@
                 navLinks.classList.remove('open');
                 toggle.classList.remove('open');
             });
+        });
+
+        // Theme toggle
+        const themeBtn = document.querySelector('.theme-toggle');
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') document.documentElement.classList.add('light');
+        themeBtn.addEventListener('click', () => {
+            document.documentElement.classList.toggle('light');
+            localStorage.setItem('theme', document.documentElement.classList.contains('light') ? 'light' : 'dark');
         });
 
         // Fade-in on scroll
