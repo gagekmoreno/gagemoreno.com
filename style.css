@@ -459,6 +459,64 @@ html:not(.light) .icon-moon { display: none; }
 }
 
 /* ─── Publications ─── */
+.pub-featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.pub-featured {
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.pub-featured:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.pub-featured img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    background: #111;
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem;
+}
+
+.pub-featured-content {
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.pub-featured-content .pub-venue {
+    align-self: flex-start;
+}
+
+.pub-featured-content h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.pub-featured-content .pub-journal {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: auto;
+}
+
 .pub-list {
     display: flex;
     flex-direction: column;
@@ -918,6 +976,14 @@ footer {
     }
 
     /* Publications */
+    .pub-featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pub-featured img {
+        height: 140px;
+    }
+
     .pub {
         padding: 1.25rem 1.25rem;
     }
