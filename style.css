@@ -443,16 +443,6 @@ nav {
     margin-bottom: 0.5rem;
 }
 
-.pub h3 a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-.pub h3 a:hover {
-    color: var(--accent);
-}
-
 .pub-authors {
     font-size: 0.85rem;
     color: var(--text-muted);
@@ -475,6 +465,25 @@ nav {
     color: var(--accent);
     margin-top: 0.5rem;
     font-weight: 500;
+}
+
+.pub-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 0.3rem 0.75rem;
+    border: 1px solid rgba(102, 187, 106, 0.3);
+    border-radius: 4px;
+    transition: background 0.2s, border-color 0.2s;
+    float: right;
+}
+
+.pub-link:hover {
+    background: var(--accent-dim);
+    border-color: var(--accent);
 }
 
 .pub-footer {
