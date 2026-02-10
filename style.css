@@ -434,15 +434,12 @@ nav {
 }
 
 .pub:hover {
-    border-color: #333;
-}
-
-.highlight-pub {
-    border-left: 3px solid var(--accent);
+    border-color: var(--accent);
 }
 
 .pub-venue {
     display: inline-block;
+    align-self: flex-start;
     font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -537,11 +534,7 @@ nav {
 }
 
 .talk:hover {
-    border-color: #333;
-}
-
-.talk.invited {
-    border-left: 3px solid var(--accent);
+    border-color: var(--accent);
 }
 
 .talk-type {
@@ -588,6 +581,11 @@ nav {
     background: var(--card);
     border-radius: 8px;
     border: 1px solid var(--border);
+    transition: border-color 0.2s;
+}
+
+.teaching-card:hover {
+    border-color: var(--accent);
 }
 
 .teaching-card h3 {
@@ -618,6 +616,12 @@ nav {
     background: var(--card);
     border-radius: 8px;
     border: 1px solid var(--border);
+    transition: border-color 0.2s;
+    text-decoration: none;
+}
+
+.press-item:hover {
+    border-color: var(--accent);
 }
 
 .press-outlet {
