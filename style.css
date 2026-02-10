@@ -172,10 +172,7 @@ html:not(.light) .icon-moon { display: none; }
     letter-spacing: -0.03em;
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text);
 }
 
 .tagline {
@@ -323,6 +320,15 @@ html:not(.light) .icon-moon { display: none; }
 
 .about-text strong {
     color: var(--text);
+}
+
+.inline-link {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.inline-link:hover {
+    text-decoration: underline;
 }
 
 .about-text em {
